@@ -163,7 +163,6 @@ public class PlayerBehaviour : MonoBehaviour
         }
 
         AnimationController();
-        PlayAudioClipEvent();
     }
 
     public void GetPlayerStates()
