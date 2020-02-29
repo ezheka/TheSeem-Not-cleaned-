@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
     public int _scoreCoins = 0;
     private int CurrentCount;
 
+    [SerializeField] private Cinemachine.CinemachineVirtualCamera LiveCamera;
+
     void Awake()
     {
         if (Gm == null)
@@ -179,8 +181,10 @@ public class GameManager : MonoBehaviour
         {
             GameState = GameStates.Playing;
             SceneManager.LoadScene(CurrentLevel);
-            GameObject.FindGameObjectWithTag("LiveCamera").GetComponent<Cinemachine.CinemachineVirtualCamera>().Follow =
-            Player.transform;
+            if (LiveCamera != null)
+            {
+                LiveCamera.GetComponent<Cinemachine.CinemachineVirtualCamera>().Follow = Player.transform;
+            }
         }
     }
 

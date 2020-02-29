@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -140,13 +139,11 @@ public class PlayerBehaviour : MonoBehaviour
         {
             IsAlive = false;
         }
-        if (wasGrounded && !isGrounded || !wasGrounded && isGrounded)
-        {Instantiate(ParticleEffect, Feet.position-new Vector3(0,0.5f,0), ParticleEffect.transform.rotation);
-        wasGrounded = isGrounded;}
-        
-        if (wasGrounded && !isGrounded || !wasGrounded && isGrounded)
-        {Instantiate(ParticleEffect, Feet.position-new Vector3(0,0.5f,0), ParticleEffect.transform.rotation);
-        wasGrounded = isGrounded;}
+        if ((wasGrounded && !isGrounded || !wasGrounded && isGrounded) && ParticleEffect !=null)
+        {
+            Instantiate(ParticleEffect, Feet.position - new Vector3(0, 0.5f, 0), ParticleEffect.transform.rotation);
+            wasGrounded = isGrounded;
+        }
         
         GetPlayerStates();               // при мерже - оставить эту строку
 
@@ -205,11 +202,14 @@ public class PlayerBehaviour : MonoBehaviour
     public void Hit(int takenDamage)
     {
         if (!wasHit)
-        {Health -= takenDamage;
-        StartCoroutine(makeInvincible(3f));}
+        {
+            Health -= takenDamage;
+            StartCoroutine(MakeInvincible(3f));
+        }
     }
 
-    public IEnumerator makeInvincible(float t){
+    public IEnumerator MakeInvincible(float t)
+    {
         wasHit = true;
         Debug.Log("I am invincible!");
         yield return new WaitForSeconds(t);
@@ -251,7 +251,6 @@ public class PlayerBehaviour : MonoBehaviour
         }
         
         isGrounded = Physics2D.OverlapCircle(Feet.position, feetRadius, Groundlayer);
-        
     }
 
     public void Jump()    // прыжок для мобильных устройств, вызывается по нажатию кнопки в MobileInput
@@ -291,7 +290,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             var target = obj.collider.gameObject;
 
-          if(State!= PlayerStates.Attacking && State!= PlayerStates.Walking && State!=PlayerStates.ReceivingDamage)
+            if(State!= PlayerStates.Attacking && State!= PlayerStates.Walking && State!=PlayerStates.ReceivingDamage)
             {
                 if (target.CompareTag("Enemy"))   // игрок увидел противника
                 {
@@ -371,20 +370,22 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void PlayAudioClipEvent()
     {
-        if (Anim.GetBool("Attack"))
+        if (Anim.GetBool("Attack") && AttackSounds.Length > 0)
         {
             ASourсe.PlayOneShot(AttackSounds[Random.Range(0, AttackSounds.Length)]);
         }
-        if (Anim.GetFloat("Speed") >= 0.01f && isGrounded == true)
+        if (Anim.GetFloat("Speed") >= 0.01f && isGrounded == true && FootstepsSounds.Length > 0)
         {
-            if(!ASourсeC.isPlaying)
-            ASourсeC.PlayOneShot(FootstepsSounds[Random.Range(0, FootstepsSounds.Length)]);
+            if (!ASourсeC.isPlaying)
+            {
+                ASourсeC.PlayOneShot(FootstepsSounds[Random.Range(0, FootstepsSounds.Length)]);
+            }
         }
-        if (Anim.GetFloat("JumpVeloc") > jumpVelosThreshold)
+        if (Anim.GetFloat("JumpVeloc") > jumpVelosThreshold && JumpSounds.Length>0)
         {
             ASourсe.PlayOneShot(JumpSounds[Random.Range(0, JumpSounds.Length)]);
         }
-        if (Anim.GetBool("ReceiveDamage"))
+        if (Anim.GetBool("ReceiveDamage") && HitSounds.Length > 0)
         {
             ASourсe.PlayOneShot(HitSounds[Random.Range(0, HitSounds.Length)]);
         }
