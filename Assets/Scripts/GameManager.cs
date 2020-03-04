@@ -49,9 +49,13 @@ public class GameManager : MonoBehaviour
         }
 
         CurrentLevel = SceneManager.GetActiveScene().name;
-        MainScoreCoinsText.text = "X  " + _scoreCoins.ToString() + "/" + GameObject.FindGameObjectsWithTag("Coin").Length;
+        Debug.Log(CurrentLevel);
+        if (GameState != GameStates.OnMainMenu)
+        {
+            MainScoreCoinsText.text = "X  " + _scoreCoins.ToString() + "/" + GameObject.FindGameObjectsWithTag("Coin").Length;
+        }
 
-        if (CurrentLevel != MainMenuLevel)
+        if (GameState !=GameStates.OnMainMenu)
         {
            Player = GameObject.FindGameObjectWithTag("Player");
            _playerState = Player.GetComponent<PlayerBehaviour>();
@@ -90,11 +94,6 @@ public class GameManager : MonoBehaviour
     {
         CurrentLevel = SceneManager.GetActiveScene().name;
         CurrentCount = GameObject.FindGameObjectsWithTag("Coin").Length-1;
-
-        if(CurrentLevel == MainMenuLevel)
-        {
-            GameState = GameStates.OnMainMenu;
-        }
 
         if (GameState != GameStates.OnMainMenu)
         {

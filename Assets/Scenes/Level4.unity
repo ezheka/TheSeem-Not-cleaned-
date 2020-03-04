@@ -764,7 +764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayPanel: {fileID: 2060603856}
   WinPanel: {fileID: 362174771}
-  Player: {fileID: 0}
+  Player: {fileID: 1100871696}
 --- !u!1 &105053118
 GameObject:
   m_ObjectHideFlags: 0
@@ -5112,7 +5112,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 700637586}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1100871696}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99680648c62cd514298f83821bd7f526, type: 3}
@@ -7840,6 +7840,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f4eb1cf64457fe4c9debe58883b8dee, type: 3}
+--- !u!1 &1100871696 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1232438331538912992, guid: e8b4eb6ffca85894f9fecc2c579333ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 700637586}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1117849243
 PrefabInstance:
   m_ObjectHideFlags: 0
