@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
         Debug.Log(CurrentLevel);
         if (GameState != GameStates.OnMainMenu)
         {
-            MainScoreCoinsText.text = "X  " + _scoreCoins.ToString() + "/" + GameObject.FindGameObjectsWithTag("Coin").Length;
+            MainScoreCoinsText.text = "X  " + _scoreCoins.ToString();
         }
 
         if (GameState !=GameStates.OnMainMenu)
