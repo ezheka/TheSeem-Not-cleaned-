@@ -19,20 +19,20 @@ public class IceSpikes : MonoBehaviour
 
     void Update()
     {
-    //    if (IsOnSpike)
-    //    {
-    //        TimeTillAttack -= Time.deltaTime;
+       if (IsOnSpike)
+       {
+           TimeTillAttack -= Time.deltaTime;
 
-    //        if (TimeTillAttack < 0)
-    //        {
-    //            TimeTillAttack = 0;
-    //        }
-    //    }
+           if (TimeTillAttack < 0)
+           {
+               TimeTillAttack = 0;
+           }
+       }
 
-    //    if (TimeTillAttack <= 0 && IsOnSpike)
-    //    {
-    //        HurtTarget();
-    //    }
+       if (TimeTillAttack <= 0 && IsOnSpike)
+       {
+           HurtTarget();
+       }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

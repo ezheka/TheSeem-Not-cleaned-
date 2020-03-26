@@ -11,7 +11,8 @@ using UnityEngine.Android;
 public class PlayerBehaviour : MonoBehaviour
 {
     [Header("Player Attributes")]
-    
+
+    public float FallAccelerationValue;
     public int Health = 5;    // значение здоровья игрока не менять!
     public int Attack = 1;
     public float Speed = 4;
@@ -50,9 +51,9 @@ public class PlayerBehaviour : MonoBehaviour
 
     [Header("Physics")]
 
-    [Range(1, 1.3f)]
-    public float FallAccelerationValue = 1.055f;
-    [HideInInspector]
+    //[Range(1, 1.3f)]
+    //public float FallAccelerationValue = 1.055f;
+    //[HideInInspector]
     public bool Acc;
     [HideInInspector]
     public float AccelerationPower;
@@ -122,14 +123,14 @@ public class PlayerBehaviour : MonoBehaviour
         {
             if (Scname == "Level" + i)
             {
-                Speed = 8;
+                Speed = 11;
             }
         }
         for (int i = 6; i <= 8; i++)//с какой по какую сцену должна быть скорость одинаковой
         {
             if (Scname == "Level" + i)
             {
-                Speed =10;
+                Speed =11;
             }
         }
     }
@@ -258,11 +259,11 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (!DoubleJump)
         {
-            if (isGrounded && State != PlayerStates.ReceivingDamage)
+            if (rb.velocity.y <= 0 && isGrounded && State != PlayerStates.ReceivingDamage)
             {
-                rb.velocity = Vector2.up * JumpingVelocity * 3;
+                rb.velocity = Vector2.up * JumpingVelocity * 3;// * (FallAccelerationValue - 1);
             }
-            if (rb.velocity.y < 0) //Ускорение падения
+            if (rb.velocity.y > 0) //Ускорение падения
             {
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * FallAccelerationValue);
             }
