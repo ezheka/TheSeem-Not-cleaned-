@@ -123,7 +123,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             if (Scname == "Level" + i)
             {
-                Speed = 11;
+                Speed = 8;
             }
         }
         for (int i = 6; i <= 8; i++)//с какой по какую сцену должна быть скорость одинаковой
