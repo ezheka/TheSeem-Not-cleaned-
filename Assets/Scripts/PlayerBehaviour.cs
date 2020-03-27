@@ -97,6 +97,8 @@ public class PlayerBehaviour : MonoBehaviour
     private KnockBack _knockBack;     // экземпляр класса KnockBack, который отталкивает противника
     public KeyboardInput _keyboardInput;
 
+    private ICollection<Renderer> renderers;
+
     void Awake()
     {
         playerCollider = GetComponent<Collider2D>();
@@ -113,7 +115,9 @@ public class PlayerBehaviour : MonoBehaviour
         //if (KeyboardInput)
         //{
             _keyboardInput = GetComponent<KeyboardInput>();
-       // }
+        // }
+
+        renderers = transform.GetComponentsInChildren<Renderer>();
     }
 
     private void Start()
@@ -206,16 +210,21 @@ public class PlayerBehaviour : MonoBehaviour
     public void Hit(int takenDamage)
     {
         if (!wasHit)
-        {Health -= takenDamage;
-        StartCoroutine(makeInvincible(3f));}
+        {
+            Health -= takenDamage;            
+            StartCoroutine(makeInvincible(3f));
+            StartCoroutine(ReceiveDamage(0));
+        }
     }
 
     public IEnumerator makeInvincible(float t){
+        
         wasHit = true;
         Debug.Log("I am invincible!");
         yield return new WaitForSeconds(t);
         wasHit = false;
         Debug.Log("I am not:(!");
+        
     }
     
     public void AddingLife()
@@ -227,7 +236,12 @@ public class PlayerBehaviour : MonoBehaviour
     {
         Anim.SetBool("ReceiveDamage", true);
         Health -= takenDamage;
-        transform.GetComponent<Renderer>().material.color = Color.red;
+        ASourсe.PlayOneShot(HitSounds[Random.Range(0, HitSounds.Length)]);
+        foreach (var spriteRender in renderers)
+        {
+            spriteRender.material.color = Color.red;
+        }
+        //transform.GetComponent<Renderer>().material.color = Color.red;
         //Handheld.Vibrate();                              //Вибрация
 
         yield return null;
@@ -237,7 +251,10 @@ public class PlayerBehaviour : MonoBehaviour
         yield return null;
 
         Anim.SetBool("ReceiveDamage", false);
-        transform.GetComponent<Renderer>().material.color = Color.white;
+        foreach (var spriteRender in renderers)
+        {
+            spriteRender.material.color = Color.white;
+        }
     }
 
     public void Walk()
@@ -259,16 +276,14 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (!DoubleJump)
         {
-            if (//rb.velocity.y <= 0 && 
-                isGrounded && State != PlayerStates.ReceivingDamage
-                )
+            if (rb.velocity.y <= 0 && isGrounded && State != PlayerStates.ReceivingDamage )
             {
                 rb.velocity = Vector2.up * JumpingVelocity * 3;// * (FallAccelerationValue - 1);
             }
-            //if (rb.velocity.y > 0) //Ускорение падения
-            //{
-            //    rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * FallAccelerationValue);
-            //}
+            if (rb.velocity.y > 0) //Ускорение падения
+            {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * FallAccelerationValue);
+            }
         }
         else
         {
@@ -378,22 +393,21 @@ public class PlayerBehaviour : MonoBehaviour
         {
             ASourсe.PlayOneShot(AttackSounds[Random.Range(0, AttackSounds.Length)]);
         }
-        if (Anim.GetFloat("Speed") >= 0.01f && isGrounded == true)
+        if (Anim.GetFloat("Speed") >= 1f && isGrounded == true)
         {
-            if(!ASourсeC.isPlaying)
-            ASourсeC.PlayOneShot(FootstepsSounds[Random.Range(0, FootstepsSounds.Length)]);
+            if (!ASourсe.isPlaying)
+            {
+                ASourсe.PlayOneShot(FootstepsSounds[Random.Range(0, FootstepsSounds.Length)]);
+            }
+            
         }
         if (Anim.GetFloat("JumpVeloc") > jumpVelosThreshold)
         {
             ASourсe.PlayOneShot(JumpSounds[Random.Range(0, JumpSounds.Length)]);
         }
-        if (Anim.GetBool("ReceiveDamage"))
-        {
-            ASourсe.PlayOneShot(HitSounds[Random.Range(0, HitSounds.Length)]);
-        }
     }
 
-    
+
     //void OnDrawGizmosSelected()      // показывает поле зрения игрока
     //{    
     //    Gizmos.color = Color.red;
