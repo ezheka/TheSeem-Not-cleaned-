@@ -259,14 +259,16 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (!DoubleJump)
         {
-            if (rb.velocity.y <= 0 && isGrounded && State != PlayerStates.ReceivingDamage)
+            if (//rb.velocity.y <= 0 && 
+                isGrounded && State != PlayerStates.ReceivingDamage
+                )
             {
                 rb.velocity = Vector2.up * JumpingVelocity * 3;// * (FallAccelerationValue - 1);
             }
-            if (rb.velocity.y > 0) //Ускорение падения
-            {
-                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * FallAccelerationValue);
-            }
+            //if (rb.velocity.y > 0) //Ускорение падения
+            //{
+            //    rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * FallAccelerationValue);
+            //}
         }
         else
         {

@@ -512,7 +512,7 @@ SpriteRenderer:
   m_Size: {x: 3.74, y: 1.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &8681529210375779322
@@ -924,6 +924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99680648c62cd514298f83821bd7f526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FallAccelerationValue: 1.007
   Health: 3
   Attack: 1
   Speed: 8
@@ -931,6 +932,7 @@ MonoBehaviour:
   JumpingVelocity: 6.5
   platformJump: 10
   DoubleJump: 0
+  wasHit: 0
   IsAlive: 1
   isOnSky: 0
   DamageTime: 0.5
@@ -948,10 +950,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a282a6021c6081e498a316d370f2bcc6, type: 3}
   - {fileID: 8300000, guid: e19865c40d384c3429c2160ad488f55d, type: 3}
   AttackSounds: []
-  JumpSounds: []
+  JumpSounds:
+  - {fileID: 8300000, guid: f162811e092d31640a518d2af642c695, type: 3}
   HitSounds: []
   jumpVelosThreshold: 2.5
-  FallAccelerationValue: 1.007
   Acc: 0
   AccelerationPower: 0
   AccelerationTime: 6
@@ -962,9 +964,8 @@ MonoBehaviour:
   Groundlayer:
     serializedVersion: 2
     m_Bits: 256
-  SkyLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  wasGrounded: 1
+  ParticleEffect: {fileID: 0}
   isGrounded: 0
   Anim: {fileID: 0}
   JumpsNum: 0

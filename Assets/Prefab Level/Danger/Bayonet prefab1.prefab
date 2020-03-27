@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9175519724544028728}
+  - component: {fileID: 6669669056356278190}
   m_Layer: 0
   m_Name: Bayonet prefab1
   m_TagString: Untagged
@@ -31,6 +32,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &6669669056356278190
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813290714609875212}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.31, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.028984427, y: -0.50770664}
+  - {x: -1.67818, y: 2.8784406}
+  - {x: -0.77031773, y: 2.6044416}
+  - {x: -0.3378812, y: 4.5085745}
+  - {x: 0.4560666, y: 3.2922707}
+  - {x: 1.1339549, y: 2.7302477}
+  - {x: 2.291605, y: 2.7241237}
+  - {x: 2.247211, y: -0.49700868}
 --- !u!1 &1413158738090901124
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,7 +66,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4887649237221002215}
   - component: {fileID: 3228011593654823410}
-  - component: {fileID: 8236842309282251437}
   - component: {fileID: 5059722791743562463}
   - component: {fileID: 4950973254885767648}
   m_Layer: 0
@@ -115,27 +139,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!68 &8236842309282251437
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1413158738090901124}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.3749298, y: -2.489031}
-  - {x: -2.0084007, y: 0.8971157}
-  - {x: -0.6681019, y: 2.5115252}
-  - {x: 2.0242834, y: 0.7427988}
-  - {x: 1.9327149, y: -2.4783332}
 --- !u!68 &5059722791743562463
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -154,7 +157,10 @@ EdgeCollider2D:
   m_Points:
   - {x: -0.3749298, y: -2.489031}
   - {x: -2.0084007, y: 0.8971157}
+  - {x: -1.0626922, y: 0.587847}
   - {x: -0.6681019, y: 2.5115252}
+  - {x: 0.2650443, y: 1.1995623}
+  - {x: 0.82988644, y: 0.7154534}
   - {x: 2.0242834, y: 0.7427988}
   - {x: 1.9327149, y: -2.4783332}
 --- !u!114 &4950973254885767648
