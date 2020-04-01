@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StartGameBlack : MonoBehaviour
@@ -45,9 +46,9 @@ public class StartGameBlack : MonoBehaviour
             img.color = new Color(0, 0, 0, a);
             yield return 0;
         }
-        if (t >= 1)
+        if (t >= 0.5)
         {
-            ButtonManager.StartNewGame();
+            SceneManager.LoadScene(4);
         }
     }
 

@@ -13,6 +13,8 @@ public class MobileInput : MonoBehaviour
     private bool right;
     private KeyboardInput kInput;
 
+    public GameObject JumpButton;
+
     private void Start()
     {
         main = GetComponent<PlayerBehaviour>();
@@ -41,6 +43,7 @@ public class MobileInput : MonoBehaviour
         {
             main.AccelerationPower = Mathf.Lerp(main.AccelerationPower, 0f, main.DecelerationTime * Time.deltaTime);
         }
+
     }
 
     public void LeftDown()

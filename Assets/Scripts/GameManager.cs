@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         }
 
         CurrentLevel = SceneManager.GetActiveScene().name;
-        MainScoreCoinsText.text = "X  " + _scoreCoins.ToString() + "/" + GameObject.FindGameObjectsWithTag("Coin").Length;
+        MainScoreCoinsText.text = "X  " + _scoreCoins.ToString() /*+ "/" + GameObject.FindGameObjectsWithTag("Coin").Length*/;
 
         if (CurrentLevel != MainMenuLevel)
         {

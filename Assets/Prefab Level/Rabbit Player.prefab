@@ -940,19 +940,14 @@ MonoBehaviour:
   MInput: 0
   "ASour\u0441e": {fileID: 252407871630431324}
   FootstepsSounds:
-  - {fileID: 8300000, guid: fe309d6d54fe46a48a5685716bb32f01, type: 3}
-  - {fileID: 8300000, guid: aff2de296ed630042a253efc87f67f21, type: 3}
-  - {fileID: 8300000, guid: 4bbdc1e78f193b546a8d482c2e0eddb0, type: 3}
-  - {fileID: 8300000, guid: 863e6d66cb2bea64b993ae8b1f10fa84, type: 3}
-  - {fileID: 8300000, guid: eeb5ff6bdd7768340ac9d649e37b9130, type: 3}
-  - {fileID: 8300000, guid: 4e20bd91bdc14d04b8cdb36f64392860, type: 3}
-  - {fileID: 8300000, guid: dfe188fcb48fc7542b5a4c87c8c39334, type: 3}
-  - {fileID: 8300000, guid: a282a6021c6081e498a316d370f2bcc6, type: 3}
-  - {fileID: 8300000, guid: e19865c40d384c3429c2160ad488f55d, type: 3}
+  - {fileID: 8300000, guid: 8836efe22adfaab4abe884d5a969935a, type: 3}
+  - {fileID: 8300000, guid: e8cbc06ebf99cd444b2e7f861a1bc2b9, type: 3}
+  - {fileID: 8300000, guid: beae371cee5effc4c8f4ab338707d017, type: 3}
   AttackSounds: []
   JumpSounds:
-  - {fileID: 8300000, guid: f162811e092d31640a518d2af642c695, type: 3}
-  HitSounds: []
+  - {fileID: 8300000, guid: bfd2db6600972e34a9041713d0f6d44f, type: 3}
+  HitSounds:
+  - {fileID: 8300000, guid: 0553412656588ff4dbf9a447ba558579, type: 3}
   jumpVelosThreshold: 2.5
   Acc: 0
   AccelerationPower: 0
@@ -965,7 +960,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   wasGrounded: 1
-  ParticleEffect: {fileID: 0}
+  ParticleEffect: {fileID: 1396828787896817875, guid: 63ed55c6863dde349aeee198a6dee441,
+    type: 3}
   isGrounded: 0
   Anim: {fileID: 0}
   JumpsNum: 0
@@ -986,6 +982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3cd34875ea958a43aaa89db7264b903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  JumpButton: {fileID: 0}
 --- !u!114 &5721327426033010748
 MonoBehaviour:
   m_ObjectHideFlags: 0

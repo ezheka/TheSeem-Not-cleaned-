@@ -13,7 +13,7 @@ public class CameraScript : MonoBehaviour
 
     void LateUpdate()
     {
-        transform.position = new Vector3(Mathf.Clamp(Player.position.x,MinX,MaxX) ,Mathf.Clamp(Player.position.y,MinY,MaxY) ,transform.position.z);
+        transform.position = new Vector3(Mathf.Clamp(Player.position.x+8f,MinX,MaxX) ,Mathf.Clamp(Player.position.y,MinY,MaxY) ,transform.position.z);
     }
 }
 

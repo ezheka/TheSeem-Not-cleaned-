@@ -168,6 +168,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
 
         AnimationController();
+        
     }
 
     public void GetPlayerStates()
@@ -242,7 +243,7 @@ public class PlayerBehaviour : MonoBehaviour
             spriteRender.material.color = Color.red;
         }
         //transform.GetComponent<Renderer>().material.color = Color.red;
-        //Handheld.Vibrate();                              //Вибрация
+        Handheld.Vibrate();                              //Вибрация
 
         yield return null;
 
@@ -279,8 +280,10 @@ public class PlayerBehaviour : MonoBehaviour
             if (rb.velocity.y <= 0 && isGrounded && State != PlayerStates.ReceivingDamage )
             {
                 rb.velocity = Vector2.up * JumpingVelocity * 3;// * (FallAccelerationValue - 1);
+                //ASourсe.PlayOneShot(JumpSounds[Random.Range(0, JumpSounds.Length)]);
+                ASourсe.PlayOneShot(JumpSounds[0]);
             }
-            if (rb.velocity.y > 0) //Ускорение падения
+            if (rb.velocity.y < -1 ) //Ускорение падения
             {
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * FallAccelerationValue);
             }
@@ -365,8 +368,8 @@ public class PlayerBehaviour : MonoBehaviour
     {
         Anim.SetFloat("Speed", Mathf.Abs(MInput));
         Anim.SetFloat("JumpVeloc", rb.velocity.y);
-        if (State == PlayerStates.Walking) 
-        {
+        if (State == PlayerStates.Walking)
+        { 
             Anim.speed = rb.velocity.x / 8; //Изменение скорости анимации бега в зависимости от скорости персонажа.
         }
 
@@ -393,17 +396,9 @@ public class PlayerBehaviour : MonoBehaviour
         {
             ASourсe.PlayOneShot(AttackSounds[Random.Range(0, AttackSounds.Length)]);
         }
-        if (Anim.GetFloat("Speed") >= 1f && isGrounded == true)
+        if (isGrounded == true)
         {
-            if (!ASourсe.isPlaying)
-            {
-                ASourсe.PlayOneShot(FootstepsSounds[Random.Range(0, FootstepsSounds.Length)]);
-            }
-            
-        }
-        if (Anim.GetFloat("JumpVeloc") > jumpVelosThreshold)
-        {
-            ASourсe.PlayOneShot(JumpSounds[Random.Range(0, JumpSounds.Length)]);
+            //ASourсe.PlayOneShot(FootstepsSounds[Random.Range(0, FootstepsSounds.Length)]);            
         }
     }
 
@@ -423,7 +418,5 @@ public class PlayerBehaviour : MonoBehaviour
         Gizmos.color = Color.blue;
 
         Gizmos.DrawWireSphere(Feet.position, feetRadius);
-    }
-
-   
+    }   
 }

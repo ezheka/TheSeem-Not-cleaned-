@@ -225,7 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BackgroundSourcePrefab: {fileID: 5162944342876257100, guid: 656d8b390dcf43d47b9359232ef79637,
     type: 3}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 103065340}
   curve:
     serializedVersion: 2
     m_Curve: []
