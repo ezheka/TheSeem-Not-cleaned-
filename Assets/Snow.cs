@@ -15,8 +15,7 @@ public class Snow : MonoBehaviour
     {
        
         //transform.Translate(new Vector3(RabbitPlayer.transform.position.x,34,-45));
-        gameObject.transform.position = new Vector3(RabbitPlayer.transform.position.x+5, 32, 0);
-
+        gameObject.transform.position = new Vector3(RabbitPlayer.transform.position.x+5, 45, 0);
 
     }
 }

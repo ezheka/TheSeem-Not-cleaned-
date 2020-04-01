@@ -940,9 +940,7 @@ MonoBehaviour:
   MInput: 0
   "ASour\u0441e": {fileID: 252407871630431324}
   FootstepsSounds:
-  - {fileID: 8300000, guid: 8836efe22adfaab4abe884d5a969935a, type: 3}
-  - {fileID: 8300000, guid: e8cbc06ebf99cd444b2e7f861a1bc2b9, type: 3}
-  - {fileID: 8300000, guid: beae371cee5effc4c8f4ab338707d017, type: 3}
+  - {fileID: 8300000, guid: aa9fa4da513e222458c18914563ccdd9, type: 3}
   AttackSounds: []
   JumpSounds:
   - {fileID: 8300000, guid: bfd2db6600972e34a9041713d0f6d44f, type: 3}

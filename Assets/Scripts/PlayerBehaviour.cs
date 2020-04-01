@@ -398,7 +398,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
         if (isGrounded == true)
         {
-            //ASourсe.PlayOneShot(FootstepsSounds[Random.Range(0, FootstepsSounds.Length)]);            
+            ASourсe.PlayOneShot(FootstepsSounds[Random.Range(0, FootstepsSounds.Length)]);            
         }
     }
 
