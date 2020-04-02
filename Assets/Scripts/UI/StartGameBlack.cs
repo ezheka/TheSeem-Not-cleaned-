@@ -57,4 +57,10 @@ public class StartGameBlack : MonoBehaviour
         img.gameObject.SetActive(true);
         StartCoroutine(FadeOut());
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("Вышел");
+    }
 }
