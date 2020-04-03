@@ -16,6 +16,7 @@ public class bonusspeed3 : MonoBehaviour
         if (collision.tag == "Player")
         {
             _player.Speed -= 5f;
+            gameObject.SetActive(false);
         }
     }
 

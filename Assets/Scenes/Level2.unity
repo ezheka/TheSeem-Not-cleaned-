@@ -2567,6 +2567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idScenes: 3
+  isFinish: 0
 --- !u!4 &477609925 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 695489326043126567, guid: 652dc49b3991e634d94eeb752cbb9e40,
@@ -8773,6 +8774,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bayonet prefab1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059722791743562463, guid: d57699f6d9fabe4459644a0f1b46cf40,
+        type: 3}
+      propertyPath: m_Points.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059722791743562463, guid: d57699f6d9fabe4459644a0f1b46cf40,
+        type: 3}
+      propertyPath: m_Points.Array.data[6].x
+      value: 2.2287598
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059722791743562463, guid: d57699f6d9fabe4459644a0f1b46cf40,
+        type: 3}
+      propertyPath: m_Points.Array.data[6].y
+      value: 1.2631774
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059722791743562463, guid: d57699f6d9fabe4459644a0f1b46cf40,
+        type: 3}
+      propertyPath: m_Points.Array.data[7].x
+      value: 2.0242834
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059722791743562463, guid: d57699f6d9fabe4459644a0f1b46cf40,
+        type: 3}
+      propertyPath: m_Points.Array.data[7].y
+      value: 0.7427988
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059722791743562463, guid: d57699f6d9fabe4459644a0f1b46cf40,
+        type: 3}
+      propertyPath: m_Points.Array.data[8].x
+      value: 1.9327149
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059722791743562463, guid: d57699f6d9fabe4459644a0f1b46cf40,
+        type: 3}
+      propertyPath: m_Points.Array.data[8].y
+      value: -2.4783332
+      objectReference: {fileID: 0}
+    - target: {fileID: 6669669056356278190, guid: d57699f6d9fabe4459644a0f1b46cf40,
+        type: 3}
+      propertyPath: m_Points.Array.data[6].x
+      value: 2.4455895
+      objectReference: {fileID: 0}
+    - target: {fileID: 6669669056356278190, guid: d57699f6d9fabe4459644a0f1b46cf40,
+        type: 3}
+      propertyPath: m_Points.Array.data[6].y
+      value: 3.0632133
       objectReference: {fileID: 0}
     - target: {fileID: 9175519724544028728, guid: d57699f6d9fabe4459644a0f1b46cf40,
         type: 3}

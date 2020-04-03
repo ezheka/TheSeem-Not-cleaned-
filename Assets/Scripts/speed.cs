@@ -6,6 +6,10 @@ public class speed : MonoBehaviour
 {
     public GameObject player;
     private PlayerBehaviour playerBehaviour;
+    public float AccelerationTime = 2f;
+    public float PitchAccelerationTime;
+    public float TargetSpeed;
+    private bool _acceleration = false;
 
     void Start()
     {
@@ -13,11 +17,21 @@ public class speed : MonoBehaviour
         playerBehaviour = player.GetComponent<PlayerBehaviour>();
     }
 
+    private void Update()
+    {
+        //if (_acceleration)
+        //{
+        //    playerBehaviour.Speed = Mathf.Lerp(playerBehaviour.Speed, TargetSpeed, AccelerationTime * Time.deltaTime);
+        //    playerBehaviour.ASourсe.pitch = Mathf.Lerp(playerBehaviour.ASourсe.pitch, 1f, PitchAccelerationTime * Time.deltaTime);
+        //}
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            playerBehaviour.Speed+=2;
+            //_acceleration = true;
+            playerBehaviour.Speed += 2;
         }
     }
 

@@ -152,4 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9ce30383545b974d8f39f14ff8e45b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 0}
+  player: {fileID: 0}
+  AccelerationTime: 3
+  PitchAccelerationTime: 3
+  TargetSpeed: 10

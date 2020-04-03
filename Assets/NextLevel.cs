@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 public class NextLevel : MonoBehaviour
 {
     public int idScenes;
-    
+    public bool isFinish = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.name== "Rabbit Player")
         {
-            SceneManager.LoadScene(idScenes);
+            StartGameBlack.finishBool = isFinish;
+            SceneManager.LoadScene(idScenes);            
         }
     }
 }

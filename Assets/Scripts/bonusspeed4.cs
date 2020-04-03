@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bonusspeed : MonoBehaviour
+public class bonusspeed4 : MonoBehaviour
 {
     public PlayerBehaviour _player;
 
@@ -15,8 +15,7 @@ public class bonusspeed : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            // было +=10
-            _player.Speed += 4f;
+            _player.Speed += 10f;
         }
     }
 

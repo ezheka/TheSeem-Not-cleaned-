@@ -8,13 +8,29 @@ public class StartGameBlack : MonoBehaviour
 {
     public MenuButtons ButtonManager;
     public Image img; 
-    public AnimationCurve curve; 
+    public AnimationCurve curve;
+    public GameObject panelFinish, panelStart;
+    public static bool finishBool = false;
     float t;
 
     private void Awake()
     {
         StartCoroutine(FadeIn());
         img.gameObject.SetActive(true);
+    }
+
+    private void Start()
+    {
+        if (finishBool == false)
+        {
+            panelStart.SetActive(true);
+            panelFinish.SetActive(false);
+        }
+        else
+        {
+            panelStart.SetActive(false);
+            panelFinish.SetActive(true);
+        }
     }
 
     IEnumerator FadeIn()
@@ -62,5 +78,17 @@ public class StartGameBlack : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Вышел");
+    }
+
+    public void openURL(string strURL)
+    {
+        Application.OpenURL(strURL);
+    }
+
+    public void closePanelFinish()
+    {
+        panelFinish.SetActive(false);
+        panelStart.SetActive(true);
+        finishBool = false;
     }
 }

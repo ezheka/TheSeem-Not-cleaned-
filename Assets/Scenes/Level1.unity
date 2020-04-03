@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idScenes: 2
+  isFinish: 0
 --- !u!1 &55105162
 GameObject:
   m_ObjectHideFlags: 0
@@ -6586,18 +6587,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1799926286 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3529523869389891875, guid: afb02bdd59a0dbf4ebb2f53e3e6ebe0b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1875619718}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99680648c62cd514298f83821bd7f526, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1804400273
 GameObject:
   m_ObjectHideFlags: 0
@@ -7124,6 +7113,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 5.3
       objectReference: {fileID: 0}
+    - target: {fileID: 2790558921847769677, guid: afb02bdd59a0dbf4ebb2f53e3e6ebe0b,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2876387379067250572, guid: afb02bdd59a0dbf4ebb2f53e3e6ebe0b,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -7577,7 +7571,113 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 622069703402711520, guid: afb02bdd59a0dbf4ebb2f53e3e6ebe0b, type: 3}
+    - {fileID: 3529523869389891875, guid: afb02bdd59a0dbf4ebb2f53e3e6ebe0b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: afb02bdd59a0dbf4ebb2f53e3e6ebe0b, type: 3}
+--- !u!1 &1875619719 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8781890986570471701, guid: afb02bdd59a0dbf4ebb2f53e3e6ebe0b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1875619718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1875619720 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5411697584944383082, guid: afb02bdd59a0dbf4ebb2f53e3e6ebe0b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1875619718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1875619721 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 622069701918520151, guid: afb02bdd59a0dbf4ebb2f53e3e6ebe0b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1875619718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1875619722 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7729778863903095721, guid: afb02bdd59a0dbf4ebb2f53e3e6ebe0b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1875619718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1875619723 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2856187646746208201, guid: afb02bdd59a0dbf4ebb2f53e3e6ebe0b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1875619718}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875619719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8eabf0f2400caf41b36f163268cee22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1875619724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875619719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99680648c62cd514298f83821bd7f526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FallAccelerationValue: 1.007
+  Health: 3
+  Attack: 1
+  Speed: 8
+  SightDistance: {fileID: 1875619721}
+  JumpingVelocity: 6.5
+  platformJump: 10
+  DoubleJump: 0
+  wasHit: 0
+  IsAlive: 1
+  isOnSky: 0
+  DamageTime: 0.5
+  KeyboardInput: 1
+  MInput: 0
+  "ASour\u0441e": {fileID: 1875619722}
+  FootstepsSounds:
+  - {fileID: 8300000, guid: e287572c08004454b87333326d7b442d, type: 3}
+  - {fileID: 8300000, guid: ffd555d1c2d0ac94685155097ec6096c, type: 3}
+  - {fileID: 8300000, guid: 24d9ab9d59f11d342ac3de03a88ba7be, type: 3}
+  - {fileID: 8300000, guid: 31946a635fbcaa1468531fd05ab025c7, type: 3}
+  - {fileID: 8300000, guid: d97deb505ec6b8d4a8b510f3ccc9e0ed, type: 3}
+  - {fileID: 8300000, guid: ed0ae923cf9ebd84abb97fa11170f6e5, type: 3}
+  - {fileID: 8300000, guid: 8cb38f3abfe8d604b8c6eeaac52b84b5, type: 3}
+  - {fileID: 8300000, guid: f35645084aeede849a8adbd7f1a5a3d2, type: 3}
+  - {fileID: 8300000, guid: c41d096337a163a4d9019cccbbf6b187, type: 3}
+  - {fileID: 8300000, guid: e0a5d2a3a5c70d94b83913cb97b81601, type: 3}
+  - {fileID: 8300000, guid: 10a796000e667ff4d842572c4f5db778, type: 3}
+  - {fileID: 8300000, guid: 0cde0ce699f2d434699a4b2c4e7353bc, type: 3}
+  - {fileID: 8300000, guid: 43310e3bc1142b541a74efbfb739ea8e, type: 3}
+  - {fileID: 8300000, guid: 87e0c3390290adc42bf61447b84f1a15, type: 3}
+  AttackSounds: []
+  JumpSounds:
+  - {fileID: 8300000, guid: bfd2db6600972e34a9041713d0f6d44f, type: 3}
+  HitSounds:
+  - {fileID: 8300000, guid: 0553412656588ff4dbf9a447ba558579, type: 3}
+  jumpVelosThreshold: 2.5
+  Acc: 0
+  AccelerationPower: 0
+  AccelerationTime: 6
+  DecelerationTime: 6
+  runDir: 0
+  Feet: {fileID: 1875619720}
+  feetRadius: 0.44
+  Groundlayer:
+    serializedVersion: 2
+    m_Bits: 256
+  wasGrounded: 1
+  ParticleEffect: {fileID: 1396828787896817875, guid: 63ed55c6863dde349aeee198a6dee441,
+    type: 3}
+  isGrounded: 0
+  Anim: {fileID: 0}
+  JumpsNum: 0
+  rb: {fileID: 0}
+  State: 0
+  GameObjectsinView: []
+  currentPlatform: {fileID: 0}
+  _keyboardInput: {fileID: 1875619723}
 --- !u!1 &1887835009
 GameObject:
   m_ObjectHideFlags: 0
@@ -8510,7 +8610,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _player
       value: 
-      objectReference: {fileID: 1799926286}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5de7db2df260674a99291bdb407bfab, type: 3}
 --- !u!4 &2028833455 stripped
