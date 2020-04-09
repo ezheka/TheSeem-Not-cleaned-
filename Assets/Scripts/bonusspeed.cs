@@ -16,7 +16,7 @@ public class bonusspeed : MonoBehaviour
         if (collision.tag == "Player")
         {
             // было +=10
-            _player.Speed += 4f;
+            _player.Speed += 2f;
         }
     }
 
