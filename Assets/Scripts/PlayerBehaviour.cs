@@ -213,7 +213,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (!wasHit)
         {
             Health -= takenDamage;            
-            StartCoroutine(makeInvincible(3f));
+            StartCoroutine(makeInvincible(0));
             StartCoroutine(ReceiveDamage(0));
         }
     }

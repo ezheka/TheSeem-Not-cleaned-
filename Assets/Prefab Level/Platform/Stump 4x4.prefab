@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1317040576441584629}
   m_Layer: 8
   m_Name: Stump 4x4
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 8277441021600606065}
   m_Layer: 8
   m_Name: Platform 4x4 (1)
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

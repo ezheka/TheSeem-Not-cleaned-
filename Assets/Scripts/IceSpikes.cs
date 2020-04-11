@@ -41,6 +41,8 @@ public class IceSpikes : MonoBehaviour
         {
             if (transform.parent.CompareTag("obstacle"))
             transform.parent.GetComponent<BoxCollider2D>().enabled = false;
+            if (transform.parent.CompareTag("obstacleEdge"))
+                transform.parent.GetComponent<EdgeCollider2D>().enabled = false;
             HurtTarget();
         }
     }
