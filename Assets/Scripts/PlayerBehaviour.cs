@@ -301,7 +301,7 @@ public class PlayerBehaviour : MonoBehaviour
             }
         }
     }
-
+ //ASourсe.PlayOneShot(JumpSounds[0]);
     public void DetectEnemy()              // определяем, что враг находится в поле зрения игрока
     {
         _currentPosition = new Vector2(transform.position.x, SightDistance.position.y);
